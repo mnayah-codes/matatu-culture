@@ -13,7 +13,7 @@
 .title-container {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: left;
   gap: 10px;
   margin-left: 2px;
 }

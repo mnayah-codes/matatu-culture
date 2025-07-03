@@ -30,7 +30,7 @@ const Drivers=[
     image:"/drivers/lenny.jpg",
     name:"Lenny",
     matatu:"Mood",
-    bio:"Lenny driving Moneyfest is also anotheer vibe. He has been in the industry for long and also won the Jamuhuri 1. Lenny also does great stunts",
+    bio:"Lenny driving Mood is also anotheer vibe. He has been in the industry for long and also won the Jamuhuri 1. Lenny also does great stunts",
     Rating: 4.5,
   },  {
     image:"/drivers/paddan.jpg",

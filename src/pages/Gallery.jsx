@@ -201,6 +201,8 @@ useEffect(() => {
 
 function NganyaCard({ nganya }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % nganya.images.length);
@@ -210,18 +212,36 @@ function NganyaCard({ nganya }) {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + nganya.images.length) % nganya.images.length);
   };
 
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = touchEndX - touchStartX;
+    if (Math.abs(deltaX) > 50) {
+      deltaX > 0 ? prevImage() : nextImage();
+    }
+  };
+
   return (
-     <div className="card fade-in">
-      <div className="image-container">
+    <div className="card fade-in">
+      <div
+        className="image-container"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <img src={nganya.images[currentIndex]} alt={nganya.name} />
 
         <FaChevronLeft className="arrow left-arrow" onClick={prevImage} />
         <FaChevronRight className="arrow right-arrow" onClick={nextImage} />
-
       </div>
       <h2 className="nganya-name">{nganya.name}</h2>
     </div>
-
   );
 }
 
