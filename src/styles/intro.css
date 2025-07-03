@@ -29,13 +29,12 @@
   overflow: hidden;
 
   background-image: url("../assets/background-3.webp");
-  background-position: center;         /* ✅ corrected from 'cover' */
-  background-size: cover;              /* ✅ added for proper fit */
+  background-position: center;  
+  background-size: cover;   
   background-repeat: no-repeat;
-
-  border: 2px solid black;             /* ✅ fixed comma usage */
+  border: 2px solid black;
   border-radius: 20px;
-  background-color: #0A0A0A;           /* ✅ fallback base color */
+  background-color: #0A0A0A;
 }
 
 /* ✅ Responsive Layout Adjustments */
@@ -111,7 +110,7 @@
   .description-container-2 {
     width: 100%;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     margin: auto;
   }
 }
